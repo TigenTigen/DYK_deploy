@@ -6,6 +6,7 @@ RUN addgroup media_share && adduser nginx media_share
 RUN chgrp -R media_share media && chmod -R 776 media
 RUN chgrp -R media_share static && chmod -R 776 static
 
+WORKDIR /etc/nginx/
 ADD nginx.conf /etc/nginx/nginx.conf
 COPY entrypoint-script.sh /etc/nginx/entrypoint-script.sh
 

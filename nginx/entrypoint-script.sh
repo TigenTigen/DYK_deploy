@@ -1,17 +1,6 @@
-#!/bin/bash
+#!/bin/sh
 
-# Replace variables $ENV{<environment varname>}
-function ReplaceEnvironmentVariable() {
-    grep -rl "\$ENV{\"$1\"}" $3|xargs -r \
-        sed -i "s|\\\$ENV{\"$1\"}|$2|g"
-}
+sed -i -e 's/HOST_IP/'$HOST_IP'/g' nginx.conf
+sed -i -e 's/HOST_NAME/'$HOST_NAME'/g' nginx.conf
 
-# Replace all variables
-for _curVar in `env | awk -F = '{print $1}'`;do
-    # awk has split them by the equals sign
-    # Pass the name and value to our function
-    ReplaceEnvironmentVariable ${_curVar} ${!_curVar} /etc/nginx/nginx.conf
-done
-
-# Run nginx
 exec /usr/sbin/nginx
