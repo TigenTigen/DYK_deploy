@@ -7,6 +7,6 @@ RUN chgrp -R media_share media && chmod -R 776 media
 RUN chgrp -R media_share static && chmod -R 776 static
 
 ADD nginx.conf /etc/nginx/nginx.conf
-ADD entrypoint-script.sh /etc/nginx/entrypoint-script.sh
+ADD entrypoint_script.sh /etc/nginx/entrypoint_script.sh
 
-ENTRYPOINT . /etc/nginx/entrypoint-script.sh
+ENTRYPOINT . /etc/nginx/entrypoint_script.sh
