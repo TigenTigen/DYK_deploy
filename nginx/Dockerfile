@@ -10,4 +10,4 @@ WORKDIR /etc/nginx/
 ADD nginx.conf /etc/nginx/nginx.conf
 COPY entrypoint-script.sh /etc/nginx/entrypoint-script.sh
 
-ENTRYPOINT . /etc/nginx/entrypoint-script.sh
+ENTRYPOINT . entrypoint-script.sh
