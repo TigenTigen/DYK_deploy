@@ -31,13 +31,13 @@ HOST_NAME - имя сервера, на котором запускается п
 
 Подготовка сервера для развертки:
 
-1. Обовление системы:
+1. Обновление системы:
 apt-get update && apt-get upgrade
 
 2. Установка и настройка git:
 apt-get install git
-export git_user_name = ...                # введите собственное значение
-export git_user_email = ...               # введите собственное значение
+export git_user_name='...'                # введите собственное значение
+export git_user_email='...'               # введите собственное значение
 git config --global user.email $git_user_email && git config --global user.name $git_user_name
 
 3. Установка docker (для ubuntu):
@@ -52,6 +52,6 @@ curl -L "https://github.com/docker/compose/releases/download/1.24.1/docker-compo
 chmod +x /usr/local/bin/docker-compose
 
 5. Задание переменных окружения:
-export HOST_IP = ...                # введите собственное значение
-export HOST_NAME = ...                # введите собственное значение
+export HOST_IP='...'                # введите собственное значение
+export HOST_NAME='...'               # введите собственное значение
 

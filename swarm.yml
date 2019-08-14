@@ -41,8 +41,8 @@ services:
       - django-ehu
       - django-ehp
     environment:
-      HOST_IP: 172.105.90.1
-      HOST_NAME: li2051-57.members.linode.com
+      HOST_IP: $HOST_IP
+      HOST_NAME: $HOST_NAME
       POSTGRES_PASSWORD_FILE: /run/secrets/psql-pw
       POSTGRES_USER_FILE: /run/secrets/psql-user
       POSTGRES_DB_FILE: /run/secrets/psql-db
@@ -62,8 +62,8 @@ services:
     ports:
       - "80:80"
     environment:
-      HOST_IP: 172.105.90.1
-      HOST_NAME: li2051-57.members.linode.com
+      HOST_IP: $HOST_IP
+      HOST_NAME: $HOST_NAME
     volumes:
       - static_folder:/usr/share/nginx/html/static
       - media_folder:/usr/share/nginx/html/media
